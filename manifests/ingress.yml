@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "overleaf-cafe"
+    labels:
+        app: "overleaf-cafe"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: overleafb5fc-overleaf-cafe.7999443f784c4138baa9.eastus2.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "overleaf-cafe"
+                servicePort: 80
