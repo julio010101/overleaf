@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "overleaf-3a66"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "overleaf-3a66"
+  template:
+    metadata:
+      labels:
+        app: "overleaf-3a66"
+    spec:
+      containers:
+        - name: "overleaf-3a66"
+          image: "aksregjulio.azurecr.io/overleaf"
+          ports:
+          - containerPort: 80
